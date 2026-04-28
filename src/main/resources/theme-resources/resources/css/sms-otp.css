@@ -1,0 +1,166 @@
+/* ============================================================
+   sms-otp.css  —  Universal SMS Authenticator challenge page
+   Compatible with the Keycloak "base" / "keycloak" theme
+   ============================================================ */
+
+/* ---- Container ---- */
+.sms-otp-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+/* ---- Phone icon ---- */
+.sms-otp-icon {
+    color: var(--pf-global--primary-color--100, #0066cc);
+    margin-bottom: 0.25rem;
+    animation: sms-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sms-pulse {
+    0%, 100% { transform: scale(1);   opacity: 1; }
+    50%       { transform: scale(1.06); opacity: .8; }
+}
+
+/* ---- Instructional copy ---- */
+.sms-otp-instruction {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--pf-global--Color--100, #151515);
+    margin: 0;
+}
+
+.sms-otp-ttl {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--pf-global--Color--200, #6a6e73);
+    margin: 0;
+}
+
+/* ---- Alert banner ---- */
+.sms-otp-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.sms-otp-alert--error {
+    background: #fdf0ef;
+    border: 1px solid #c9190b;
+    color: #c9190b;
+}
+
+.sms-otp-alert--warning {
+    background: #fdf4e6;
+    border: 1px solid #f0ab00;
+    color: #795600;
+}
+
+.sms-otp-alert__icon {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* ---- Form ---- */
+.sms-otp-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sms-otp-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.sms-otp-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--pf-global--Color--100, #151515);
+}
+
+.sms-otp-input {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.35em;
+    text-align: center;
+    border: 1px solid var(--pf-global--BorderColor--100, #b8bbbe);
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    background: #fff;
+    color: #151515;
+}
+
+.sms-otp-input:focus {
+    border-color: var(--pf-global--primary-color--100, #0066cc);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.18);
+}
+
+.sms-otp-hint {
+    font-size: 0.78rem;
+    color: var(--pf-global--Color--200, #6a6e73);
+}
+
+/* ---- Submit button ---- */
+.sms-otp-btn {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.1s ease;
+}
+
+.sms-otp-btn--primary {
+    background: var(--pf-global--primary-color--100, #0066cc);
+    color: #fff;
+}
+
+.sms-otp-btn--primary:hover {
+    background: var(--pf-global--primary-color--200, #004d99);
+    transform: translateY(-1px);
+}
+
+.sms-otp-btn--primary:active {
+    transform: translateY(0);
+}
+
+/* ---- Divider ---- */
+.sms-otp-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    color: var(--pf-global--Color--200, #6a6e73);
+    font-size: 0.8rem;
+}
+
+.sms-otp-divider::before,
+.sms-otp-divider::after {
+    content: "";
+    flex: 1;
+    border-top: 1px solid var(--pf-global--BorderColor--100, #d2d2d2);
+}
+
+/* ---- Back link ---- */
+.sms-otp-link {
+    font-size: 0.875rem;
+    color: var(--pf-global--primary-color--100, #0066cc);
+    text-decoration: none;
+}
+
+.sms-otp-link:hover {
+    text-decoration: underline;
+}
