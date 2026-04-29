@@ -157,6 +157,21 @@
     transform: translateY(0);
 }
 
+.sms-otp-btn--secondary {
+    background: transparent;
+    color: var(--pf-global--primary-color--100, #0066cc);
+    border: 1px solid var(--pf-global--primary-color--100, #0066cc);
+}
+
+.sms-otp-btn--secondary:hover {
+    background: rgba(0, 102, 204, 0.05);
+    transform: translateY(-1px);
+}
+
+.sms-otp-btn--secondary:active {
+    transform: translateY(0);
+}
+
 /* ---- Divider ---- */
 .sms-otp-divider {
     display: flex;
@@ -253,6 +268,14 @@
                     name="login"
                     value="true">
                 ${msg("smsAuthVerifyButton")}
+            </button>
+            <button id="sms-otp-resend"
+                    type="submit"
+                    class="sms-otp-btn sms-otp-btn--secondary"
+                    name="resend"
+                    value="true"
+                    formnovalidate>
+                ${msg("smsAuthResendButton")}
             </button>
 
         </form>

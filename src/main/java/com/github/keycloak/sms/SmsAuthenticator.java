@@ -127,6 +127,14 @@ public class SmsAuthenticator implements Authenticator {
     @Override
     public void action(AuthenticationFlowContext context) {
         MultivaluedMap<String, String> params = context.getHttpRequest().getDecodedFormParameters();
+
+        if (params.containsKey("resend")) {
+            log.info("User {} requested a new OTP code", context.getUser().getUsername());
+            clearNotes(context);
+            authenticate(context);
+            return;
+        }
+
         String submittedCode = params.getFirst(FORM_CODE);
 
         String storedCode = context.getAuthenticationSession().getAuthNote(NOTE_CODE);

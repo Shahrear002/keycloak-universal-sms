@@ -7,7 +7,7 @@
 
     <groupId>io.github.shahrear002</groupId>
     <artifactId>keycloak-universal-sms</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Keycloak Universal SMS Authenticator</name>
