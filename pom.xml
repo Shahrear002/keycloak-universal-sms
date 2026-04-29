@@ -5,7 +5,7 @@
              https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.keycloak</groupId>
+    <groupId>io.github.shahrear002</groupId>
     <artifactId>keycloak-universal-sms</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
@@ -16,10 +16,32 @@
         Keycloak 17+ (Quarkus-based). Supports any SMS gateway via a
         configurable GenericHttpSmsSender.
     </description>
-    <url>https://github.com/keycloak/keycloak-universal-sms</url>
+    <url>https://github.com/Shahrear002/keycloak-universal-sms</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Shahrear Rahman</name>
+            <email>shahrear002@gmail.com</email>
+            <organization>Shahrear002</organization>
+            <organizationUrl>https://github.com/Shahrear002</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/Shahrear002/keycloak-universal-sms</url>
+        <connection>scm:git:git@github.com:Shahrear002/keycloak-universal-sms.git</connection>
+        <developerConnection>scm:git:git@github.com:Shahrear002/keycloak-universal-sms.git</developerConnection>
+    </scm>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -117,6 +139,54 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals><goal>jar-no-fork</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals><goal>jar</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals><goal>sign</goal></goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <autoPublish>true</autoPublish>
                 </configuration>
             </plugin>
 
