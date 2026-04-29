@@ -1,5 +1,7 @@
 # Keycloak Universal SMS Authenticator
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.shahrear002/keycloak-universal-sms.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.shahrear002/keycloak-universal-sms)
+
 A production-ready, provider-agnostic SMS Authenticator SPI for modern **Keycloak 17+ (Quarkus)**. 
 
 This plugin allows you to add SMS-based 2FA / OTP to your Keycloak authentication flows without writing custom Java code for specific SMS gateways (like Twilio, AWS SNS, Infobip, etc.). Instead, you configure your SMS gateway's REST API details directly in the Keycloak Admin Console.
@@ -16,6 +18,19 @@ This plugin allows you to add SMS-based 2FA / OTP to your Keycloak authenticatio
 ---
 
 ## 📦 Installation
+
+### Option 1: Maven Dependency
+If you are building a custom Keycloak distribution or want to include this in your own project, you can pull it directly from Maven Central:
+
+```xml
+<dependency>
+    <groupId>io.github.shahrear002</groupId>
+    <artifactId>keycloak-universal-sms</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Option 2: Manual Build
 
 1. **Build the JAR**
    Make sure you have JDK 11+ and Maven installed.
@@ -110,4 +125,4 @@ If you have highly specific needs (e.g., AWS SNS SDK integration, cryptographic 
 
 ## License
 
-MIT License. See `LICENSE` for details.
+Apache License, Version 2.0. See `LICENSE` for details.
